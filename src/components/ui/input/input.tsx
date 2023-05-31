@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./input.module.css";
+import { useAppDispatch } from "../../../redux/store";
+import { getString } from "../../../redux/reducers/input/inputReducer";
 
 interface InputProps extends React.HTMLProps<HTMLInputElement> {
   placeholder?: string;
@@ -14,6 +16,7 @@ export const Input: React.FC<InputProps> = ({
   maxLength,
   max,
   isLimitText = false,
+  onChange,
   ...rest
 }) => {
   const limitText =
@@ -29,6 +32,7 @@ export const Input: React.FC<InputProps> = ({
         type={type}
         maxLength={maxLength}
         max={max}
+        onChange={onChange}
         {...rest}
       />
       {isLimitText && (

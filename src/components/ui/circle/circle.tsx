@@ -22,6 +22,7 @@ export const Circle: React.FC<CircleProps> = ({
   extraClass = "",
   isSmall,
 }) => {
+  console.log(letter)
   return (
     <div className={`${styles.content} ${extraClass}`}>
       <div
